@@ -1,0 +1,3 @@
+[33mcf50efa[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeat/typography-font-refresh[m[33m)[m chore(typography): global font refresh with Cyrillic support
+[33mb2346f1[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m Merge pull request #2 from Makhonin/feat/google-api-modernization
+[33mb5539e8[m[33m ([m[1;31morigin/feat/google-api-modernization[m[33m, [m[1;32mfeat/google-api-modernization[m[33m)[m feat: set Google Maps default center to Moscow, Russia
