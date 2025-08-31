@@ -1,6 +1,61 @@
+// Modernized Google Maps API usage with @googlemaps/js-api-loader
+// This maintains the exact same functionality while using the latest API version
 
-google.maps.event.addDomListener(window, 'load', init);
+// Load Google Maps API dynamically
+async function loadGoogleMapsAPI() {
+    try {
+        // Fetch API key from server
+        const response = await fetch('api-config.php');
+        const config = await response.json();
+        const apiKey = config.googleMapsApiKey;
+        
+        const { Loader } = await import('https://unpkg.com/@googlemaps/js-api-loader@1.16.2/dist/index.min.js');
+        
+        const loader = new Loader({
+            apiKey: apiKey,
+            version: 'weekly',
+            libraries: ['places']
+        });
 
+        await loader.load();
+        init();
+    } catch (error) {
+        console.error('Failed to load Google Maps API:', error);
+        // Fallback: try to load the old way if the new loader fails
+        loadGoogleMapsAPIFallback();
+    }
+}
+
+// Fallback method for backward compatibility
+async function loadGoogleMapsAPIFallback() {
+    if (typeof google !== 'undefined' && google.maps) {
+        init();
+        return;
+    }
+    
+    try {
+        // Fetch API key from server
+        const response = await fetch('api-config.php');
+        const config = await response.json();
+        const apiKey = config.googleMapsApiKey;
+        
+        const script = document.createElement('script');
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
+        script.onload = init;
+        script.onerror = () => console.error('Failed to load Google Maps API');
+        document.head.appendChild(script);
+    } catch (error) {
+        console.error('Failed to fetch API configuration:', error);
+        // Ultimate fallback with hardcoded key
+        const script = document.createElement('script');
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAuC6uQvtDvk0xU3oHyrsd3Tt0iSD_Xiu8&libraries=places';
+        script.onload = init;
+        script.onerror = () => console.error('Failed to load Google Maps API');
+        document.head.appendChild(script);
+    }
+}
+
+// Initialize map when API is loaded
 function init() {
     var mapOptions = {
         scrollwheel: false,
@@ -56,6 +111,14 @@ function init() {
     });
 }
 
+// Load Google Maps API when window loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadGoogleMapsAPI);
+} else {
+    loadGoogleMapsAPI();
+}
+
+// Handle window resize
 google.maps.event.addDomListener(window, 'resize', init);
 
 var Counter = 3;
