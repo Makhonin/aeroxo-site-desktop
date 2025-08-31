@@ -1,6 +1,6 @@
 $(function() {
     // animup();
-    $('a[href*=#]:not([href=#])').click(function() {
+    $('a[href*="#"]:not([href="#"])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -12,7 +12,8 @@ $(function() {
             }
         }
     });
-    var saveButton=0;
+    let index;
+    var saveButton = 0;
     //page 3 4-button stuff
     $(".img_section_button").click(function(){
         index = $(".img_section_button").index(this);
@@ -20,26 +21,13 @@ $(function() {
         saveButton = index;
     });
 
-    $("a.special[href=#]").on('click', function(e){
-        e.preventDefault();
-        if(saveButton<3) {
-            index = saveButton+1;
-            change_slide(index, saveButton);
-            saveButton = index;
-        } else {
-            $('html,body').animate({
-                scrollTop: $("#Screen_5").offset().top
-            }, 1000);
-        }
-    });
-
     //fade ili animate za contents sled click na menuto
-    /*var state = true;
+    let state = true;
     if (matchMedia) {
       var mq = window.matchMedia("(max-width:1199px)");
       mq.addListener(WidthChange);
       WidthChange(mq);
-    }*/
+    }
 
     // fit_vertically($('.screen'));
     // $(window).resize(function(){
@@ -92,6 +80,6 @@ function WidthChange(mq){
 //360 drone
 var droneArray=[];
 
-for (i = 0; i <= 46; i++) {
-    droneArray[i]="img/home/screen_5/drone_360/dr"+(i+1)+".png"
+for (let i = 0; i <= 46; i++) {
+    droneArray[i] = "img/home/screen_5/drone_360/dr" + (i + 1) + ".png"
 }

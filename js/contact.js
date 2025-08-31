@@ -16,25 +16,14 @@ function init() {
 
                 var map = new google.maps.Map(mapElement, mapOptions);
 
-                var lat; var lon;
-                var myLatlng = new google.maps.LatLng(lat, lon)
-
-                var marker = new google.maps.Marker({
-                    position: myLatlng,
+                const marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(40.7400748, -73.9867735),
                     animation: google.maps.Animation.DROP,
                     icon: 'img/marker.jpg',
                     map: map,
                     title: 'Office'
                 });
 
-                $("#office3").on('click touch', function(){
-                    changeMarkerPos(marker, 56.9542955,24.1374494);
-                    panMarkerPos(marker, 56.9542955,24.1374494);
-                });
-                $("#office2").on('click touch', function(){
-                    changeMarkerPos(marker, 55.83343, 49.05047);
-                    panMarkerPos(marker, 55.8540, 49.05047);
-                });
                 $("#office1").on('click touch', function(){
                     changeMarkerPos(marker, 55.8005214,37.5825216);
                     panMarkerPos(marker, 55.8005214,37.5825216);
@@ -46,27 +35,20 @@ function init() {
                 function panMarkerPos(marker, lat, lon) {
                     map.panTo(new google.maps.LatLng(lat, lon));
                 }
-                var marker = new google.maps.Marker({
-                  position: new google.maps.LatLng(40.7400748, -73.9867735),
-                  animation: google.maps.Animation.DROP,
-                  icon: 'img/marker.jpg',
-                  map: map,
-                  title: 'Office'
-                });
 }
 
 google.maps.event.addDomListener(window, 'resize', init);
-var Counter=3;
+let Counter = 1;
 function your_function(id){
-  getId=id.substr(id.length - 8);
-  if (Counter!=getId) {
-    $('#office1, #office2, #office3').css( "font-weight", "100" );
-    $( '#'+id ).css( "font-weight", "900" );
-    $( '#active_office' ).switchClass( "active_office"+Counter, "active_"+id, 200, "easeInOutQuad" );
-    $('.office_info_1, .office_info_2, .office_info_3').css( "display", "none" );
-    $('.office_info_'+getId).css( "display", "block" );
-    Counter=getId;
-  };
+  const getId = id.slice(-1);
+  if (Counter != getId) {
+    $('#office1').css( "font-weight", "100" );
+    $('#' + id).css( "font-weight", "900" );
+    $('#active_office').switchClass( "active_office" + Counter, "active_" + id, 200, "easeInOutQuad" );
+    $('.office_info_' + Counter).css( "display", "none" );
+    $('.office_info_' + getId).css( "display", "block" );
+    Counter = getId;
+  }
 }
 
 $(function() {
@@ -124,7 +106,7 @@ $(function() {
 });
 
 $(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');

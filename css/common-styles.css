@@ -31,6 +31,10 @@ a {
   text-decoration: none;
 }
 
+.centered {
+  text-align: center;
+}
+
 .inlineFlex {
   display: inline-flex;
   justify-content: center;
