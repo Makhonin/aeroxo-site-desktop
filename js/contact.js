@@ -1,11 +1,68 @@
+// Modernized Google Maps API usage with @googlemaps/js-api-loader
+// This maintains the exact same functionality while using the latest API version
 
-google.maps.event.addDomListener(window, 'load', init);
+// Load Google Maps API dynamically
+async function loadGoogleMapsAPI() {
+    try {
+        // Fetch API key from server
+        const response = await fetch('api-config.php');
+        const config = await response.json();
+        const apiKey = config.googleMapsApiKey;
+        
+        const { Loader } = await import('https://unpkg.com/@googlemaps/js-api-loader@1.16.2/dist/index.min.js');
+        
+        const loader = new Loader({
+            apiKey: apiKey,
+            version: 'weekly',
+            libraries: ['places']
+        });
 
+        await loader.load();
+        init();
+    } catch (error) {
+        console.error('Failed to load Google Maps API:', error);
+        // Fallback: try to load the old way if the new loader fails
+        loadGoogleMapsAPIFallback();
+    }
+}
+
+// Fallback method for backward compatibility
+async function loadGoogleMapsAPIFallback() {
+    if (typeof google !== 'undefined' && google.maps) {
+        init();
+        return;
+    }
+    
+    try {
+        // Fetch API key from server
+        const response = await fetch('api-config.php');
+        const config = await response.json();
+        const apiKey = config.googleMapsApiKey;
+        
+        const script = document.createElement('script');
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
+        script.onload = init;
+        script.onerror = () => console.error('Failed to load Google Maps API');
+        document.head.appendChild(script);
+    } catch (error) {
+        console.error('Failed to fetch API configuration:', error);
+        // Ultimate fallback with hardcoded key
+        const script = document.createElement('script');
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAuC6uQvtDvk0xU3oHyrsd3Tt0iSD_Xiu8&libraries=places';
+        script.onload = init;
+        script.onerror = () => console.error('Failed to load Google Maps API');
+        document.head.appendChild(script);
+    }
+}
+
+// Initialize map when API is loaded
 function init() {
     var mapOptions = {
         scrollwheel: false,
-        zoom: 13,
-        center: new google.maps.LatLng(40.7680748, -73.9867735),
+        zoom: 11,
+        center: new google.maps.LatLng(55.7558, 37.6176), // Moscow, Russia
+        language: 'ru',
+        region: 'RU',
         styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"},{"weight":"0.20"},{"lightness":"28"},{"saturation":"23"},{"visibility":"off"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"color":"#494949"},{"lightness":13},{"visibility":"off"}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#4d5f71"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#4d5f71"},{"lightness":14},{"weight":1.4}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#182a3c"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#2f4153"},{"lightness":5}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#2e3741"},{"lightness":25}]},{"featureType":"road.highway","elementType":"labels.text","stylers":[{"visibility":"simplified"},{"color":"#748ca5"},{"weight":"0.25"},{"saturation":"-74"},{"invert_lightness":true}]},{"featureType":"road.highway","elementType":"labels.icon","stylers":[{"visibility":"off"},{"color":"#ff0000"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#4a5663"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"}]},{"featureType":"transit","elementType":"all","stylers":[{"color":"#3f5163"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}]
     };
 
@@ -48,14 +105,22 @@ function init() {
     }
     
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(40.7400748, -73.9867735),
+        position: new google.maps.LatLng(55.7558, 37.6176), // Moscow, Russia
         animation: google.maps.Animation.DROP,
         icon: 'img/marker.jpg',
         map: map,
-        title: 'Office'
+        title: 'Москва'
     });
 }
 
+// Load Google Maps API when window loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadGoogleMapsAPI);
+} else {
+    loadGoogleMapsAPI();
+}
+
+// Handle window resize
 google.maps.event.addDomListener(window, 'resize', init);
 
 var Counter = 3;
