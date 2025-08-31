@@ -1,14 +1,12 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     $name = strip_tags(trim($_POST["name"]));
     $name = str_replace(array("\r", "\n"), array(" ", " "), $name);
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
     $message = trim($_POST["desc"]);
     $org = trim($_POST["org"]);
     $type = $_POST["type"];
-
 
     if (!isset($name) OR !isset($message) OR !isset($org) OR !isset($type) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         http_response_code(400);
@@ -31,9 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $recipient = "info@aeroxo.com, moscow@aeroxo.com";
-
     $subject = "New contact from $name";
-
 
     $email_content = "Name: $name\n";
     $email_content .= "Organization: $org\n";
@@ -47,18 +43,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'X-Mailer' => 'PHP/' . phpversion()
     );
 
-
     if (mail($recipient, $subject, $email_content, $email_headers)) {
-
         http_response_code(200);
         echo "Thank You! Your message has been sent.";
     } else {
         http_response_code(500);
         echo "Oops! Something went wrong and we couldn't send your message.";
     }
-
 } else {
-
     http_response_code(403);
     echo "There was a problem with your submission, please try again.";
 }

@@ -104,11 +104,10 @@ jQuery(document).ready(function ($) {
 
 
     function showDropdown(element) {
-        var event;
-        event = document.createEvent('MouseEvents');
+        var event = document.createEvent('MouseEvents');
         event.initMouseEvent('mousedown', true, true, window);
         element.dispatchEvent(event);
-    };
+    }
 
     function scrollAnimation() {
         //normal scroll - use requestAnimationFrame (if defined) to optimize performance

@@ -1,30 +1,32 @@
 /* detect touch */
-if("ontouchstart" in window){
+if ("ontouchstart" in window) {
     document.documentElement.className = document.documentElement.className + " touch";
 }
-if(!$("html").hasClass("touch")){
+
+if (!$("html").hasClass("touch")) {
     /* background fix */
     $(".parallax").css("background-attachment", "fixed");
 }
 
 /* fix vertical when not overflow
 call fullscreenFix() if .fullscreen content changes */
-function fullscreenFix(){
+function fullscreenFix() {
     var h = $('body').height();
     // set .fullscreen height
-    $(".content-b").each(function(i){
-        if($(this).innerHeight() <= h){
+    $(".content-b").each(function(i) {
+        if ($(this).innerHeight() <= h) {
             $(this).closest(".fullscreen").addClass("not-overflow");
         }
     });
 }
+
 $(window).resize(fullscreenFix);
 fullscreenFix();
 
 /* resize background images */
-function backgroundResize(){
+function backgroundResize() {
     var windowH = $(window).height();
-    $(".background").each(function(i){
+    $(".background").each(function(i) {
         var path = $(this);
         // variables
         var contW = path.width();
@@ -37,7 +39,7 @@ function backgroundResize(){
         diff = diff ? diff : 0;
         // remaining height to have fullscreen image only on parallax
         var remainingH = 0;
-        if(path.hasClass("parallax") && !$("html").hasClass("touch")){
+        if (path.hasClass("parallax") && !$("html").hasClass("touch")) {
             var maxH = contH > windowH ? contH : windowH;
             remainingH = windowH - contH;
         }
@@ -45,7 +47,7 @@ function backgroundResize(){
         imgH = contH + remainingH + diff;
         imgW = imgH * ratio;
         // fix when too large
-        if(contW > imgW){
+        if (contW > imgW) {
             imgW = contW;
             imgH = imgW / ratio;
         }
@@ -55,29 +57,30 @@ function backgroundResize(){
         path.css("background-size", imgW + "px " + imgH + "px");
     });
 }
+
 $(window).resize(backgroundResize);
 $(window).focus(backgroundResize);
 backgroundResize();
 
 /* set parallax background-position */
-function parallaxPosition(e){
+function parallaxPosition(e) {
     var heightWindow = $(window).height();
     var topWindow = $(window).scrollTop();
     var bottomWindow = topWindow + heightWindow;
     var currentWindow = (topWindow + bottomWindow) / 2;
-    $(".parallax").each(function(i){
+    $(".parallax").each(function(i) {
         var path = $(this);
         var height = path.height();
         var top = path.offset().top;
         var bottom = top + height;
         // only when in range
-        if(bottomWindow > top && topWindow < bottom){
+        if (bottomWindow > top && topWindow < bottom) {
             var imgW = path.data("resized-imgW");
             var imgH = path.data("resized-imgH");
             // min when image touch top of window
             var min = 0;
             // max when image touch bottom of window
-            var max = - imgH + heightWindow;
+            var max = -imgH + heightWindow;
             // overflow changes parallax
             var overflowH = height < heightWindow ? imgH - height : imgH - heightWindow; // fix height on overflow
             top = top - overflowH;
@@ -91,7 +94,8 @@ function parallaxPosition(e){
         }
     });
 }
-if(!$("html").hasClass("touch")){
+
+if (!$("html").hasClass("touch")) {
     $(window).resize(parallaxPosition);
     //$(window).focus(parallaxPosition);
     $(window).scroll(parallaxPosition);
