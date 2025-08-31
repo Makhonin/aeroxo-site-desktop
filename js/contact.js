@@ -59,8 +59,10 @@ async function loadGoogleMapsAPIFallback() {
 function init() {
     var mapOptions = {
         scrollwheel: false,
-        zoom: 13,
-        center: new google.maps.LatLng(40.7680748, -73.9867735),
+        zoom: 11,
+        center: new google.maps.LatLng(55.7558, 37.6176), // Moscow, Russia
+        language: 'ru',
+        region: 'RU',
         styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"},{"weight":"0.20"},{"lightness":"28"},{"saturation":"23"},{"visibility":"off"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"color":"#494949"},{"lightness":13},{"visibility":"off"}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#4d5f71"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#4d5f71"},{"lightness":14},{"weight":1.4}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#182a3c"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#2f4153"},{"lightness":5}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#2e3741"},{"lightness":25}]},{"featureType":"road.highway","elementType":"labels.text","stylers":[{"visibility":"simplified"},{"color":"#748ca5"},{"weight":"0.25"},{"saturation":"-74"},{"invert_lightness":true}]},{"featureType":"road.highway","elementType":"labels.icon","stylers":[{"visibility":"off"},{"color":"#ff0000"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#4a5663"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"}]},{"featureType":"transit","elementType":"all","stylers":[{"color":"#3f5163"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}]
     };
 
@@ -103,11 +105,11 @@ function init() {
     }
     
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(40.7400748, -73.9867735),
+        position: new google.maps.LatLng(55.7558, 37.6176), // Moscow, Russia
         animation: google.maps.Animation.DROP,
         icon: 'img/marker.jpg',
         map: map,
-        title: 'Office'
+        title: 'Москва'
     });
 }
 
