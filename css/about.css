@@ -60,7 +60,7 @@
   margin-top: 50px;
 }
 .name {
-    font-family: 'LeelawUI', 'LeelawUI'; font-weight: 900; font-style: normal;
+    font-family: var(--font-sans); font-weight: 900; font-style: normal;
 }
 .page_title {
   position: relative;

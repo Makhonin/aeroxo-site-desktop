@@ -133,7 +133,7 @@ a:visited {
 }
 
 #contact_form {
-    font-family: 'LeelawUI';
+    font-family: var(--font-sans);
     font-weight: 500;
     font-style: normal;
 }
@@ -171,16 +171,16 @@ select > option {
 ::-moz-placeholder, /* firefox 19+ */
 :-ms-input-placeholder, /* ie */
 input:-moz-placeholder {
-    font-family: 'LeelawUI';
-    font-weight: 100;
+    font-family: var(--font-sans);
+    font-weight: 300;
     font-style: normal;
     font-size: 17px;
     color: black;
 }
 
 select {
-    font-family: 'LeelawUI';
-    font-weight: 100;
+    font-family: var(--font-sans);
+    font-weight: 300;
     font-style: normal;
     font-size: 17px;
     padding-left: 20px;
@@ -207,7 +207,7 @@ select {
 
 textarea {
     font-size: 17px;
-    font-family: 'LeelawUI';
+    font-family: var(--font-sans);
     font-weight: 500;
     font-style: normal;
     padding: 20px;
