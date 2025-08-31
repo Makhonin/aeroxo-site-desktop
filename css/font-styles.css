@@ -1,0 +1,255 @@
+@font-face {
+    font-family: LeelawUI; /* Гарнитура шрифта */
+    src: url(fonts/LeelawUI.ttf); /* Путь к файлу со шрифтом */
+}
+
+.thin {
+    font-family: 'LeelawUI', 'LeelawUI';
+    font-weight: 100;
+    font-style: normal;
+}
+
+.ultra {
+    font-family: 'LeelawUI', 'LeelawUI';
+    font-weight: 900;
+    font-style: normal;
+}
+
+.medium {
+    font-family: 'LeelawUI', 'LeelawUI';
+    font-weight: 500;
+    font-style: normal;
+}
+
+.ligt {
+    font-family: 'LeelawUI', 'LeelawUI';
+    font-weight: 300;
+    font-style: normal;
+}
+
+.bold {
+    font-family: 'LeelawUI', 'LeelawUI';
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Font size --- */
+.fs_78 {
+    font-size: 78px;
+    font-size: 5.575em;
+}
+
+.fs_70 {
+    font-size: 70px;
+    font-size: 5em;
+}
+
+.fs_60 {
+    font-size: 60px;
+    font-size: 4.3em;
+}
+
+.fs_55 {
+    font-size: 55px;
+    font-size: 3.93em;
+}
+
+.fs_48 {
+    font-size: 48px;
+    font-size: 3.43em;
+}
+
+.fs_30 {
+    font-size: 30px;
+    font-size: 2.15em;
+}
+
+.fs_24 {
+    font-size: 24px;
+    font-size: 1.715em;
+}
+
+.fs_18 {
+    font-size: 18px;
+    font-size: 1.3em;
+}
+
+/* Common Media */
+@media (max-width: 1366px) {
+    .fs_48 {
+        font-size: 2.43em;
+    }
+}
+
+@media (max-height: 900px) {
+    .fs_78, .fs_70, .fs_60, .fs_55 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px), screen and (max-height: 400px) {
+    .fs_78, .fs_70, .fs_60, .fs_55 {
+        font-size: 2em;
+    }
+
+    .fs_30 {
+        font-size: 1.4em;
+    }
+    .fs_24 {
+        font-size: 1.115em;
+    }
+}
+
+@media (max-width: 480px), screen and (max-height: 400px) {
+    .fs_24 {
+        font-size: 1.115em;
+    }
+
+    .fs_48 {
+        font-size: 1.43em;
+    }
+
+    .fs_78 {
+        font-size: 2em;
+    }
+
+    .fs_70 {
+        font-size: 1.5em;
+    }
+
+    .fs_55 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 390px), screen and (max-height: 320px){
+    .fs_78 {
+        font-size: 1.9em;
+    }
+
+    .fs_70 {
+        font-size: 1.5em;
+    }
+
+    .fs_24 {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 330px) {
+    .fs_24 {
+        font-size: 1em;
+    }
+}
+
+/* --- Font size */
+
+/* Aeroxo Icons Font --- */
+
+@font-face {
+    font-family: 'aeroxo-icons';
+    src: url('fonts/aeroxo-icons.eot?jjya2q');
+    src: url('fonts/aeroxo-icons.eot?jjya2q#iefix') format('embedded-opentype'),
+    url('fonts/aeroxo-icons.ttf?jjya2q') format('truetype'),
+    url('fonts/aeroxo-icons.woff?jjya2q') format('woff'),
+    url('fonts/aeroxo-icons.svg?jjya2q#aeroxo-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+i {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'aeroxo-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.arx-left-arrow:before {
+    content: "\e912";
+}
+
+.arx-right-arrow:before {
+    content: "\e913";
+}
+
+.arx-google-drive:before {
+    content: "\e911";
+}
+
+.arx-eye-close-up:before {
+    content: "\e900";
+}
+
+.arx-soc-fb:before {
+    content: "\e901";
+}
+
+.arx-soc-instagram:before {
+    content: "\e902";
+}
+
+.arx-soc-linkedin:before {
+    content: "\e903";
+}
+
+.arx-soc-twitter:before {
+    content: "\e904";
+}
+
+.arx-menu-about:before {
+    content: "\e905";
+}
+
+.arx-arrowdown:before {
+    content: "\e906";
+}
+
+.arx-menu-contact:before {
+    content: "\e907";
+}
+
+.arx-dropdown:before {
+    content: "\e908";
+}
+
+.arx-menu-home:before {
+    content: "\e909";
+}
+
+.arx-menu-tech:before {
+    content: "\e90a";
+}
+
+.arx-tech-range:before {
+    content: "\e90b";
+}
+
+.arx-tech-speed:before {
+    content: "\e90c";
+}
+
+.arx-tech-time:before {
+    content: "\e90d";
+}
+
+.arx-tech-type:before {
+    content: "\e90e";
+}
+
+.arx-tech-weight:before {
+    content: "\e90f";
+}
+
+.arx-toggle-btn:before {
+    content: "\e910";
+}
+
+/* --- Aeroxo Icons Font */

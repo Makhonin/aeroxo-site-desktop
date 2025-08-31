@@ -1,0 +1,739 @@
+/* index.html */
+body {
+  height: auto;
+}
+.__Screen_4_content {
+    width: 1200px; height: 700px; /* must be present. No matter the value */
+    position: absolute;          /* to props top/bottom take effect */
+    margin: auto;                /* here's the magic. */
+    bottom: 0px; top: 0px; right: 0px; left:0px;     /* This is how you center a block verticaly */
+}
+.img_section_button{
+  position: relative;
+  width: 40px;
+  height: 12%;
+  float: left;
+  cursor: pointer;
+  z-index: 3;
+  margin-bottom: 100%;
+}
+#Screen_4_overflow{
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  overflow: hidden;
+}
+#screen_4_background_0, #screen_4_background_1, #screen_4_background_2, #screen_4_background_3 {
+  position:absolute;
+  width: 100%;
+  background-size: cover;
+  display:none;
+}
+#screen_4_background_0 {background-image: url(../img/home/screen_4/slide0.jpg);}
+#screen_4_background_1 {background-image: url(../img/home/screen_4/slide1.jpg);}
+#screen_4_background_2 {background-image: url(../img/home/screen_4/slide2.jpg);}
+#screen_4_background_3 {background-image: url(../img/home/screen_4/slide3.jpg);}
+#screen_4_toggle_slide_0,#screen_4_toggle_slide_1,#screen_4_toggle_slide_2,#screen_4_toggle_slide_3{
+  position:absolute;
+  left:0;
+  right:0;
+  margin:auto;
+  z-index:2;
+  display: none;
+}
+.Screen_4_content_inner_0, .Screen_4_content_inner_1, .Screen_4_content_inner_2, .Screen_4_content_inner_3 {
+  position: absolute;
+  height: 230px;
+  width: 100%;
+  opacity: 0;
+  display: inline-flex;
+  left: 0;
+}
+.img_section_0{
+  width: 40px;
+  position: absolute;
+  left: calc(50% - 20px);
+  bottom: 180px;
+  opacity: 1;
+  z-index: 1;
+}
+.img_section_1{
+  margin-top:300px;
+  width: 40px;
+  height:316px;
+  background: url(../img/home/screen_4/2_4_center_bar.png);
+  z-index: 5;
+}
+.img_section_2{
+  margin-top:300px;
+  width: 40px;
+  height:316px;
+  background: url(../img/home/screen_4/3_4_center_bar.png);
+  z-index: 5;
+}
+.img_section_3{
+  margin-top:300px;
+  width: 40px;
+  height:316px;
+  background: url(../img/home/screen_4/4_4_center_bar.png);
+  z-index: 5;
+}
+#Screen_4 .screen_content  {
+  text-align: center;
+}
+@media (max-width: 1050px) {
+  #Screen_3 {
+    background-color: #2c3e50;
+  }
+}
+
+
+@media (max-width: 1366px) and (orientation: landscape) {
+  /* tech */
+  .page_tech .rotor {
+    height: 2300px;
+  }
+  .page_tech #Screen_2 .screen_button {
+    bottom: 60px;
+  }
+  .page_tech .inlineFlex {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1050px) {
+  .footer_space {
+    height: 110px;
+  }
+
+  /* tech */
+  .Screen_2_content {
+    bottom: 180px;
+  }
+  #Screen_2 .screen_button {
+    bottom: 60px;
+  }
+  .rotor {
+    height: 2200px;
+  }
+  #terrain {
+    width: 75%;
+    bottom: 140px;
+    left: calc(50% - 35%);
+  }
+  #schema {
+    width: 60%;
+    bottom: 135px;
+    left: calc(50% - 27%);
+  }
+  .machines__nav .machines__arrow.prev {
+    margin-right: 200px;
+  }
+  .machines__nav .machines__arrow.next {
+    margin-left: 200px;
+  }
+
+  /* about */
+  .page_about {
+    background: url(../img/about/about_bg.png) 100% 100% fixed;
+    background-size: cover;
+  }
+  .page_about #nav {
+    right: -330px;
+  }
+  .page_about #menuToggle + label {
+    right: 0;
+  }
+
+  /* contact */
+  .page_contact .Screen_1_content_inner {
+    width: 100%;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .flexContainer {
+    flex-wrap: wrap;
+  }
+
+  /* index */
+  .screenText {
+    margin: 40px 0;
+  }
+  #Screen_3 .flexItemLeft{
+    flex-basis: 70%;
+  }
+  #Screen_3 .flexItemRight {
+    flex-basis: 90%;
+    left: 0;
+    top: -100px;
+  }
+  .drone360 {
+    width: 100%;
+  }
+  .drone360 img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* tech */
+  .flexContainer.flexContainer_sa {
+    flex-wrap: nowrap;
+  }
+  .rotor {
+    background: url(../img/techpage/screen_2/rotor.png) 20% 100% no-repeat;
+  }
+  .page_tech #Screen_4 .screen_content {
+    position: relative;
+    padding: 60px 80px;
+  }
+  .page_tech #Screen_4:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+  }
+}
+
+@media (max-height: 900px) and (orientation: landscape) {
+  /* index */
+  .img_section_0 {display: none;}
+}
+
+@media (max-width: 800px) {
+  /* contact */
+  .offices {
+    width: 500px;
+  }
+  #active_office {
+    width: 250px;
+    bottom: -14px;
+  }
+
+  /* index */
+  .img_section_0 {
+    bottom: 160px;
+  }
+
+  .page_home #Screen_5 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* tech */
+  .page_tech #Screen_2:before,
+  .page_tech #Screen_4:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+  }
+  .page_tech #Screen_2:before {
+    z-index: 2;
+  }
+  .spritespin-canvas{
+    width: 75% !important;
+  }
+  .center-content img {
+    max-width: 80% !important;
+  }
+  .page_tech #Screen_4,
+  .page_tech #Screen_5 {
+    min-height: 100vh;
+  }
+  #schema {
+    bottom: 60px;
+  }
+  #terrain {
+    bottom: 50px;
+  }
+  .page_tech #Screen_4 .flex-row {
+    flex-wrap: wrap;
+    margin-left: 60px;
+  }
+  .page_tech #Screen_4 .flex-item {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    position: relative;
+  }
+  .page_tech #Screen_4 .flex-item:before {
+    content: '';
+    width: 30px;
+    height: 33px;
+    position: absolute;
+    left: -42px;
+    top: 10px;
+    background: url(../img/tech.svg);
+    background-size: cover;
+  }
+  .page_tech #Screen_4 .screen_content {
+    position: relative;
+  }
+  .page_tech #Screen_4 .flex-row:nth-child(2){
+    justify-content: space-around;
+  }
+  .rotor {
+    height: 2100px;
+    left: 140px;
+  }
+
+  /* index */
+  .page_home .flexContainer {
+    padding-bottom: 0;
+  }
+  .img_section_0 {
+    display: none;
+  }
+  .page_home #Screen_4 .screen_button {
+    display: block;
+  }
+  #Screen_6 {
+    font-size: 10px;
+  }
+
+  /* contact */
+  .page_contact .page__title {
+    font-size: 4.5em;
+  }
+  .input-contact {
+    width: 49%;
+    height: 40px;
+    margin-top: 10px;
+  }
+  input[type="text"],
+  input[type="email"],
+  select.input-contact,
+  #textarea-contact {
+    font-size: 12px;
+    padding-left: 10px;
+  }
+  #textarea-contact {
+    margin-top: 10px;
+    padding: 10px;
+    height: 90px;
+  }
+  .page_contact .btn {
+    margin-top: 20px;
+  }
+  /* contact */
+  .offices {
+    font-size: 2.2em;
+    width: 300px;
+    padding-bottom: 15px;
+  }
+  #active_office {
+    width: 150px;
+    bottom: -10px;
+  }
+
+  /* about */
+  .page_about .page_title {
+    font-size: 3em;
+  }
+
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .screen, .screen_content,
+  .fullHeight {
+    min-height: 100vh !important;
+  }
+  .screen_content {
+    padding: 30px 55px;
+  }
+
+  /* index */
+  .page_home .icon_box { display: none; }
+  .page_home #Screen_3 .flexItemRight { top: -15px; }
+  .page_home #Screen_4 { font-size: 10px; }
+  .page_home #Screen_4 .screen_button {width: 50px; height: 50px; line-height: 48px;}
+  .page_home #Screen_4 .screen_button [class^="arx-"] {font-size: 26px;}
+  .page_home #Screen_6 { font-size: 8px; }
+  .page_home #Screen_6 .inlineFlex { align-items: flex-start; }
+
+  /* tech */
+  .page_tech .Screen_2_content {
+    bottom: 100px;
+    font-size: 10px;
+  }
+  .page_tech #Screen_4 .flex-container {
+    height: calc(100vh - 80px);
+  }
+  .page_tech #Screen_4 .screen_content {
+    padding: 40px 80px;
+  }
+  .page_tech #Screen_4 .flex-item {
+    font-size: 10px;
+    margin-left: 100px;
+  }
+  .page_tech #Screen_4 .flex-item:before {
+    width: 16px;
+    height: 17px;
+    left: -25px;
+    top: 3px;
+  }
+
+  .page_tech #Screen_5 .screen,
+  .page_tech #Screen_5 .screen_content {
+    min-height: 150vh !important;
+  }
+  .page_tech #schema {
+    bottom: 140px;
+  }
+  .page_tech #terrain {
+    bottom: 140px;
+  }
+
+}
+
+@media (max-width: 700px) {
+  /* contact */
+  .offices {
+    font-size: 2.2em;
+    width: 400px;
+    padding-bottom: 15px;
+  }
+  #active_office {
+    width: 200px;
+    bottom: -10px;
+  }
+
+  /* about */
+  .page_about .line img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  {
+    /* contact */
+    .offices {
+      font-size: 2.2em;
+      width: 400px;
+      padding-bottom: 15px;
+    }
+    #active_office {
+      width: 200px;
+      bottom: -10px;
+    }
+  }
+}
+
+@media (max-width: 600px) and (orientation: landscape) {
+  /* tech */
+  .page_tech #Screen_4 ul.ul-list {
+    font-size: 8px;
+  }
+  .page_tech #Screen_5 .screen,
+  .page_tech #Screen_5 .screen_content {
+    min-height: 180vh !important;
+  }
+}
+
+@media (max-height: 600px) and (orientation: portrait) {
+  .page_tech #Screen_4 {
+    min-height: 100vh;
+  }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .page_tech .machines {
+    font-size: 8px;
+  }
+  .page_tech #Screen_1 [class^="arx-"] {
+    font-size: 2em;
+  }
+  .page_tech .center-content {
+    margin: 2vh auto;
+  }
+}
+@media (max-height: 420px) and (orientation: landscape) {
+  .page_contact #Screen_1.screen,
+  .page_contact #Screen_1 .screen_content {
+    min-height: 130vh !important;
+  }
+  .page_contact #Screen_2.screen,
+  .page_contact #Screen_2 .screen_content {
+    min-height: 140vh !important;
+  }
+}
+@media (max-height: 330px) and (orientation: landscape) {
+
+  .page_contact #Screen_1.screen,
+  .page_contact #Screen_1 .screen_content {
+    min-height: 150vh !important;
+  }
+  .page_contact #Screen_2.screen,
+  .page_contact #Screen_2 .screen_content {
+    min-height: 170vh !important;
+  }
+}
+
+@media (max-width: 550px) {
+  /* index */
+  .fly {
+    height: auto;
+  }
+
+  /* contact */
+  .page_contact #Screen_2{
+    min-height: 90vh;
+  }
+  #contact_form {
+    margin-top: 20px;
+  }
+  .input-contact {
+    width: 100%;
+  }
+  .offices {
+    font-size: 1.8em;
+    padding-bottom: 5px;
+  }
+  #active_office {
+    margin-top: -6px;
+  }
+  .custom-img {
+    background-size: 36px;
+  }
+
+  /* tech */
+  .page_tech #Screen_4_content {
+    font-size: 10px;
+  }
+  .page_tech #Screen_4 {
+    min-height: 100vh;
+  }
+  .Screen_2_content {
+    position: relative;
+    bottom: 0;
+  }
+  .page_tech #Screen_1 [class^="arx-"] {
+    font-size: 3em;
+  }
+  .page_tech #Screen_1 .machines__arrow [class^="arx-"] {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* about */
+  .team {font-size: 30px; width: 100%;}
+  .desc {margin-top: 5%;}
+  .logo { width: 60%; }
+  .logo img { max-width: 100%; height: auto; }
+  .staff_1 { margin-top: 40px; }
+  .circle {width: 30%; height: auto;}
+  .info-left, .info-right {margin-top: 1%; font-size: 15px; width: 100%;}
+  .info-left { margin-right: 0;}
+  .info-right { margin-left: 0;}
+  .picture_1, .picture_2, .picture_3, .picture_4 {height: auto; margin-top: 5%;}
+  .contact_button {margin-top: 140%;}
+  .footer_space { height: 80px; }
+  .page_about .page_title {
+    font-size: 1.4em;
+  }
+
+
+  /* tech */
+  .page_tech #Screen_1.screen {
+    min-height: 100vh;
+  }
+  .flexContainer.flexContainer_sa {
+    flex-wrap: wrap;
+  }
+  .upper_content {
+    flex-basis: 50%;
+    margin-top: 20px;
+  }
+  .machines__nav .machines__arrow.prev {
+    margin-right: 100px;
+  }
+  .machines__nav .machines__arrow.next {
+    margin-left: 100px;
+  }
+
+  /* index */
+  .page_home #Screen_5 {
+    font-size: 30px;
+    min-height: auto;
+  }
+  .page_home #Screen_5 .screen_content {
+    min-height: auto;
+  }
+  .page_home #Screen_5 .drone360 {
+    margin-top: 30px;
+  }
+  .page_home .Screen_6_content_inner .fs_78 {
+    font-size: 3em;
+  }
+  .page_home #Screen_6 .screen_content {
+    min-height: 90vh;
+  }
+}
+
+@media (max-width: 440px) {
+  /* index */
+  .page_home #Screen_3 .flexItemLeft {
+    flex-basis: 100%;
+  }
+  .page_home #Screen_3 .flexItemRight {
+    top: -20px;
+  }
+  .page_home #Screen_4 .screen,
+  .page_home #Screen_4 .screen_content {
+    min-height: 100vh;
+  }
+  .page_home #Screen_6 .screen_content {
+    min-height: 90vh;
+  }
+
+  /* contact */
+  .page_contact .page__title {
+    font-size: 3.5em;
+  }
+  .offices {
+    font-size: 1.4em;
+    width: 200px;
+    padding-bottom: 10px;
+  }
+  #active_office {
+    width: 100px;
+    bottom: -6px;
+  }
+  #offices_info {
+    font-size: 1.6em;
+  }
+  .page_contact #Screen_2.screen,
+  .page_contact #Screen_2 .screen_content {
+    min-height: 100vh !important;
+  }
+
+  /* tech */
+  .page_tech #schema {
+    bottom: 30px;
+  }
+  .page_tech #terrain {
+    bottom: 10px;
+  }
+  .page_tech #Screen_4 .screen_content {
+    padding: 60px;
+  }
+  .page_tech #Screen_4 .flex-row {
+    margin-left: 50px;
+  }
+
+  /* about */
+  .greenline {
+    width: 100%;
+    top: 60px;
+    left: 0;
+  }
+  .page_about .page_title {
+    font-size: .8em;
+  }
+}
+
+@media (max-width: 400px) {
+  .page_tech .Screen_4_content_inner {
+    top: 0;
+    padding: 40px;
+}
+
+@media (max-width: 390px) {
+  /* index */
+  .page_home #Screen_6 .screen_content {
+    min-height: 100vh;
+  }
+  .page_home .icon_box {
+    width: 50px;
+    height: 50px;
+    line-height: 48px;
+  }
+  .page_home .icon_box [class^="arx-"] {
+    font-size: 26px;
+  }
+  .page_home #Screen_4 .fs_78 {
+    font-size: 2.4em;
+  }
+  .page_home #Screen_4 .screen_button {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+  }
+
+  /* about */
+  .greenline {
+    top: 40px;
+  }
+  .footer_space {
+    height: 140px;
+  }
+
+  /* tech */
+  .page_tech #Screen_4 {
+    min-height: 70vh;
+  }
+  .page_tech #Screen_4 ul.ul-list {
+    margin-left: 20px;
+  }
+  .page_tech #Screen_4_content {
+    font-size: 8px;
+  }
+  .page_tech #Screen_5 .screen_content {
+    font-size: 12px;
+  }
+
+  /* contact */
+  .page_contact #Screen_2.screen,
+  .page_contact #Screen_2 .screen_content {
+    min-height: 110vh !important;
+  }
+
+}
+
+@media (max-width: 330px) {
+  /* contact */
+  .page_contact #Screen_2 .form_text {
+    font-size: 10px;
+  }
+
+  /* index */
+  .page_home #Screen_4 .fs_78 {
+    font-size: 2em;
+  }
+  .screen_button [class^="arx-"] {
+    font-size: 30px;
+  }
+
+  /* tech */
+  .page_tech #Screen_1.screen {
+    min-height: 115vh;
+  }
+  .page_tech #Screen_4 .flex-row {
+    margin-left: 20px;
+  }
+  .page_tech #Screen_5 {font-size: 8px;}
+  .page_tech #Screen_5.screen,
+  .page_tech #Screen_5 .screen_content {
+    min-height: 110vh !important;
+  }
+  .page_tech #schema {
+    bottom: 30px;
+  }
+  .page_tech #terrain {
+    bottom: 10px;
+  }
+}

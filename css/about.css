@@ -1,0 +1,100 @@
+#container {
+    background: #2c3e50;
+}
+.page_about #nav {
+  right: -316px;
+}
+.page_about #menuToggle + label {
+  right: 16px;
+}
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+.picture_1,
+.picture_3 {
+    width: 26%;
+    height: 289px;
+    float:left;
+}
+.picture_2 {
+    width: 26%;
+    height: 289px;
+    float:right;
+}
+[class^="staff_"] {
+  min-height: 400px;
+  margin-top: 50px;
+  text-align: left;
+}
+[class^="staff_"] .line img {
+  max-width: 100%;
+}
+.staff_1 {
+    margin-top: 120px;
+}
+.staff_2 {
+    text-align: right;
+    min-height: 550px;
+}
+.info-left {
+    float: right;
+    width: 70%;
+    font-size: 24px;
+}
+.info-right {
+    float: left;
+    width: 70%;
+    font-size: 24px;
+}
+.content {
+    background: url(../img/about/about_bg.png) 100% 100% fixed;
+    overflow: hidden;
+}
+.desc {
+    font-size: 30px;
+    font-size: 2.15em;
+    margin-top: 50px;
+}
+.team {
+  margin-top: 50px;
+}
+.name {
+    font-family: 'LeelawUI', 'LeelawUI'; font-weight: 900; font-style: normal;
+}
+.page_title {
+  position: relative;
+}
+.greenline {
+  width: 600px;
+  position: absolute;
+  top: 100px;
+  left: calc(50% - 300px);
+}
+.btn {
+  margin: 80px 0;
+}
+.footer_space{
+  height: 144px;
+  background: #2c3e50;
+}
+@media screen and (max-width:1240px){
+  .greenline {
+    width: 340px;
+    position: absolute;
+    top: 63px;
+    left: calc(50% - 170px);
+  }
+  .desc {
+      width: 100%;
+      height: auto;
+      font-size: 1.43em;
+  }
+  .circle {height: 70%;}
+  .staff_1, .staff_2, .staff_3, .staff_4 {width: 100%}
+  .picture_1, .picture_3 {width: 100%;  margin-left:0; margin-top:2%; text-align: center;}
+  .picture_2 {width: 100%;  margin-right:0; margin-top:2%; text-align: center;}
+  .info-left {width: 80%; margin-top:-7%; margin-right:10%; text-align: center; font-size: 20px;}
+  .info-right {width: 80%; margin-top:-7%; margin-left: 10%; text-align: center; font-size: 20px;}
+  .contact_button {margin-top: 30%;}
+}
